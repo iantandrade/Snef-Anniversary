@@ -125,6 +125,16 @@ h1 {
   margin-left: 0;
 }
 
+.intro{
+    display: inline-block;
+    position: absolute;
+    top: 65px;
+    left: 10px;
+    text-align: center;
+    font-size: 1.1rem;
+    color: #004943;
+}
+
 .slider__legend {
   padding: 1rem 3rem 0;
   list-style: none;
