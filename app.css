@@ -59,6 +59,8 @@ transition: all .20s ease;
   padding: 1% 1.5rem;
   max-width: 1000px;
   width: 100%;
+  margin-top: 0;
+  padding-left: 0;
 }
 
 #app {
@@ -114,12 +116,13 @@ button {
 }
 
 h1 {
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-size: 3rem;
   text-align: center;
   color: #FFFFFF;
   background-color: #004943;
   border-radius: 2%;
+  margin-left: 0;
 }
 
 .slider__legend {
