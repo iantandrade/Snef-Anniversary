@@ -59,7 +59,7 @@ transition: all .20s ease;
   max-width: 1000px;
   width: 100%;
   margin-top: 0;
-  padding-left: 0;
+  padding-left: 0 0 0 0;
 }
 
 #app {
