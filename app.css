@@ -55,12 +55,12 @@ transition: all .20s ease;
   transition: all .20s ease;
   }
 
-.container {
-  max-width: 1000px;
-  width: 100%;
-  margin-top: 0;
-  padding: 0 0 0 0;
-}
+  .container {
+    max-width: 1000px;
+    width: 100%;
+    margin-top: 0;
+    padding: 0 0 0 0;
+  }
 
 #app {
   display:inline-block;
@@ -129,12 +129,12 @@ h1 {
     display: inline-block;
     position: absolute;
     top: 65px;
-    left: 10px;
+    left: 0px;
+    padding: 0 0 0 0;
     text-align: center;
     font-size: 1.1rem;
     color: #004943;
 }
-
 .slider__legend {
   padding: 1rem 3rem 0;
   list-style: none;
