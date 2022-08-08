@@ -891,11 +891,12 @@ class Slider {
             document.getElementById("24").style.opacity = 0;
             document.getElementById("celeb").style.opacity = 1;
             document.getElementById("celeb").style.zIndex = 110;
-
+            document.getElementById("25").style.zIndex = 200;
+            
             setTimeout(function () {
 
                 document.getElementById("25").style.opacity = 1;
-                document.getElementById("25").style.zIndex = 200;
+                
             }, 5000);
 
             "use strict";
