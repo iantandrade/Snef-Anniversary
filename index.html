@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Snef Brasil Anniversary App</title>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,600" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="app.css">
+</head>
+
+<body>
+    <div class="container">
+        <h1>SNEF BRASIL</h1>
+        <!-- slider app container -->
+        <div id="app"></div>
+        <div class="image-wrapper">
+                <img class = "img1" src="img/1.png" id="1">
+                <img class = "img2" src="img/2.png" id="2">
+                <img class = "img3" src="img/3.png" id="3">
+                <img class = "img4" src="img/4.png" id="4">
+                <img class = "img5" src="img/5.png" id="5">
+                <img class = "img6" src="img/6.png" id="6"> 
+                <img class = "img7" src="img/7.png" id="7">
+                <img class = "img8" src="img/8.png" id="8">
+                <img class = "img9" src="img/9.png" id="9">
+                <img class = "img10" src="img/10.png" id="10">
+                <img class = "img11" src="img/11.png" id="11">
+                <img class = "img12" src="img/12.png" id="12">
+                <img class = "img13" src="img/13.png" id="13">
+                <img class = "img14" src="img/14.png" id="14">
+                <img class = "img15" src="img/15.png" id="15">
+                <img class = "img16" src="img/16.png" id="16">
+                <img class = "img17" src="img/17.png" id="17">
+                <img class = "img18" src="img/18.png" id="18"> 
+                <img class = "img19" src="img/19.png" id="19">
+                <img class = "img20" src="img/20.png" id="20">
+                <img class = "img21" src="img/21.png" id="21">
+                <img class = "img22" src="img/22.png" id="22">
+                <img class = "img23" src="img/23.png" id="23">
+                <img class = "img24" src="img/24.png" id="24">
+                <img class = "img25" src="img/groupSnef.png" id="25">
+        </div>
+        
+        <div>
+            <button class=" ButtonReset" id="ButtonResetId" onclick="resetTimeLine()">Reset TimeLine</button>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="app.js">
+
+    </script>
+    <script>
+
+        let teste = 0;
+        
+        // slider app options
+        const opts = {
+            DOMselector: '#app',
+            sliders: [
+                {
+                    radius: 165,
+                    min: 1905,
+                    max: 2022,
+                    step: 1,
+                    initialValue: 0,
+                    color: '#004943',
+                    displayName: 'ANO',
+                },
+                // {
+                //     radius: 160,
+                //     min: 0,
+                //     max: 3000,
+                //     step: 100,
+                //     initialValue: 200,
+                //     color: '#0984e3',
+                //     displayName: 'Value 2'
+                // },
+                // {
+                //     radius: 40,
+                //     min: 0,
+                //     max: 200,
+                //     step: 10,
+                //     initialValue: 20,
+                //     color: '#d63031',
+                //     displayName: 'Value 3'
+                // }
+            ]
+        };
+        // instantiate the slider
+        const slider = new Slider(opts);
+        slider.draw();
+    </script>
+</body>
+
+</html>

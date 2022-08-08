@@ -1,0 +1,123 @@
+*, 
+*::before, 
+*::after {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #f8f9fa;
+  font-family: 'Raleway', sans-serif; 
+  z-index: 0;
+}
+
+#image-wrapper {
+  
+  position: absolute; /* Para que a posição da legenda(txt_ilustracao), dependa das dimensões de #intro */
+  float: right; /* Para se ajustar às dimensões da img */
+}
+
+.img1 , .img2 , .img3 , .img4 , .img5 , .img6 , .img7 ,  .img8 , .img9 , .img10 , .img11 , .img12, .img13, .img14, .img15, .img16, .img17, .img18, .img19, .img20, .img21, .img22, .img23, .img24 {
+  height: 300px;
+  width: 300px;
+  display: inline-block;
+  position:absolute; 
+  left:52px; 
+  top:245px; 
+  z-index: 2;
+  opacity: 0;
+}
+.img25{
+height: 360px;
+width: 360px;
+display: inline-block;
+position:absolute; 
+left:23px; 
+top:220px; 
+z-index: 1;
+opacity: 0;
+border-radius: 5%;
+}
+
+.container {
+  padding: 1% 1.5rem;
+  max-width: 1000px;
+  width: 100%;
+}
+
+#app {
+  display:inline-block;
+  position:absolute;
+  left:2px; 
+  top:100px; 
+  z-index: 100;
+}
+
+button {
+  display:inline-block;
+  position:absolute;
+  left:125px; 
+  top:630px; 
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  font-size: 3rem;
+}
+
+.slider__legend {
+  padding: 1rem 3rem 0;
+  list-style: none;
+}
+
+.slider__legend h2 {
+  margin-bottom: 1rem;
+}
+
+.slider__legend li {
+  display: flex;
+  margin-bottom: 1rem;
+  
+  
+}
+
+.slider__legend li span {
+  display: inline-block;
+}
+
+.slider__legend li span:first-child {
+  height: 20px;
+  width: 20px;
+  margin-bottom: -2px;
+}
+
+.slider__legend li span:nth-child(2) {
+  margin: 0 0.5rem;
+}
+
+.slider__legend li span:last-child {
+  font-size: 1.25rem;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums lining-nums;
+  min-width: 60px;
+}
