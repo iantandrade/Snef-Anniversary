@@ -892,11 +892,11 @@ class Slider {
             document.getElementById("celeb").style.opacity = 1;
             document.getElementById("celeb").style.zIndex = 110;
             document.getElementById("25").style.zIndex = 200;
-            
+
             setTimeout(function () {
 
                 document.getElementById("25").style.opacity = 1;
-                
+
             }, 2500);
 
             "use strict";
@@ -1069,235 +1069,236 @@ class Slider {
 
         }
             else if (currentValue >= 2023) {
-            document.getElementById("1").style.opacity = 0;
-            document.getElementById("2").style.opacity = 0;
-            document.getElementById("3").style.opacity = 0;
-            document.getElementById("4").style.opacity = 0;
-            document.getElementById("5").style.opacity = 0;
-            document.getElementById("6").style.opacity = 0;
-            document.getElementById("7").style.opacity = 0;
-            document.getElementById("8").style.opacity = 0;
-            document.getElementById("9").style.opacity = 0;
-            document.getElementById("10").style.opacity = 0;
-            document.getElementById("11").style.opacity = 0;
-            document.getElementById("12").style.opacity = 0;
-            document.getElementById("14").style.opacity = 0;
-            document.getElementById("15").style.opacity = 0;
-            document.getElementById("16").style.opacity = 0;
-            document.getElementById("17").style.opacity = 0;
-            document.getElementById("18").style.opacity = 0;
-            document.getElementById("19").style.opacity = 0;
-            document.getElementById("20").style.opacity = 0;
-            document.getElementById("21").style.opacity = 0;
-            document.getElementById("22").style.opacity = 0;
-            document.getElementById("23").style.opacity = 0;
-            document.getElementById("24").style.opacity = 0;
-            document.getElementById("25").style.opacity = 0;
-            document.getElementById("celeb").style.opacity = 0;
-    }
-
-    /**
-     * Mouse down / Touch start event
-     * 
-     * @param {object} e 
-     */
-    mouseTouchStart(e) {
-        if (this.mouseDown) return;
-        this.mouseDown = true;
-        const rmc = this.getRelativeMouseOrTouchCoordinates(e);
-        this.findClosestSlider(rmc);
-        this.redrawActiveSlider(rmc);
-    }
-
-    /**
-     * Mouse move / touch move event
-     * 
-     * @param {object} e 
-     */
-    mouseTouchMove(e) {
-        if (!this.mouseDown) return;
-        e.preventDefault();
-        const rmc = this.getRelativeMouseOrTouchCoordinates(e);
-        this.redrawActiveSlider(rmc);
-    }
-
-    /**
-     * Mouse move / touch move event
-     * Deactivate slider
-     * 
-     */
-    mouseTouchEnd() {
-        if (!this.mouseDown) return;
-        this.mouseDown = false;
-        this.activeSlider = null;
-    }
-
-    /**
-     * Calculate number of arc fractions and space between them
-     * 
-     * @param {number} circumference 
-     * @param {number} arcBgFractionLength 
-     * @param {number} arcBgFractionBetweenSpacing 
-     * 
-     * @returns {number} arcFractionSpacing
-     */
-    calculateSpacingBetweenArcFractions(circumference, arcBgFractionLength, arcBgFractionBetweenSpacing) {
-        const numFractions = Math.floor((circumference / arcBgFractionLength) * arcBgFractionBetweenSpacing);
-        const totalSpacing = circumference - numFractions * arcBgFractionLength;
-        return totalSpacing / numFractions;
-    }
-
-    /**
-     * Helper functiom - describe arc
-     * 
-     * @param {number} x 
-     * @param {number} y 
-     * @param {number} radius 
-     * @param {number} startAngle 
-     * @param {number} endAngle 
-     * 
-     * @returns {string} path
-     */
-    describeArc(x, y, radius, startAngle, endAngle) {
-        let path,
-            endAngleOriginal = endAngle,
-            start,
-            end,
-            arcSweep;
-
-        if (endAngleOriginal - startAngle === 360) {
-            endAngle = 359;
+                document.getElementById("1").style.opacity = 0;
+                document.getElementById("2").style.opacity = 0;
+                document.getElementById("3").style.opacity = 0;
+                document.getElementById("4").style.opacity = 0;
+                document.getElementById("5").style.opacity = 0;
+                document.getElementById("6").style.opacity = 0;
+                document.getElementById("7").style.opacity = 0;
+                document.getElementById("8").style.opacity = 0;
+                document.getElementById("9").style.opacity = 0;
+                document.getElementById("10").style.opacity = 0;
+                document.getElementById("11").style.opacity = 0;
+                document.getElementById("12").style.opacity = 0;
+                document.getElementById("14").style.opacity = 0;
+                document.getElementById("15").style.opacity = 0;
+                document.getElementById("16").style.opacity = 0;
+                document.getElementById("17").style.opacity = 0;
+                document.getElementById("18").style.opacity = 0;
+                document.getElementById("19").style.opacity = 0;
+                document.getElementById("20").style.opacity = 0;
+                document.getElementById("21").style.opacity = 0;
+                document.getElementById("22").style.opacity = 0;
+                document.getElementById("23").style.opacity = 0;
+                document.getElementById("24").style.opacity = 0;
+                document.getElementById("25").style.opacity = 0;
+                document.getElementById("celeb").style.opacity = 0;
+            }
         }
 
-        start = this.polarToCartesian(x, y, radius, endAngle);
-        end = this.polarToCartesian(x, y, radius, startAngle);
-        arcSweep = endAngle - startAngle <= 180 ? '0' : '1';
-
-        path = [
-            'M', start.x, start.y,
-            'A', radius, radius, 0, arcSweep, 0, end.x, end.y
-        ];
-
-        if (endAngleOriginal - startAngle === 360) {
-            path.push('z');
+        /**
+         * Mouse down / Touch start event
+         * 
+         * @param {object} e 
+         */
+        mouseTouchStart(e) {
+            if (this.mouseDown) return;
+            this.mouseDown = true;
+            const rmc = this.getRelativeMouseOrTouchCoordinates(e);
+            this.findClosestSlider(rmc);
+            this.redrawActiveSlider(rmc);
         }
 
-        return path.join(' ');
-    }
-
-    /**
-     * Helper function - polar to cartesian transformation
-     * 
-     * @param {number} centerX 
-     * @param {number} centerY 
-     * @param {number} radius 
-     * @param {number} angleInDegrees 
-     * 
-     * @returns {object} coords
-     */
-    polarToCartesian(centerX, centerY, radius, angleInDegrees) {
-        const angleInRadians = angleInDegrees * Math.PI / 180;
-        const x = centerX + (radius * Math.cos(angleInRadians));
-        const y = centerY + (radius * Math.sin(angleInRadians));
-        return { x, y };
-    }
-
-    /**
-     * Helper function - calculate handle center
-     * 
-     * @param {number} angle 
-     * @param {number} radius
-     * 
-     * @returns {object} coords 
-     */
-    calculateHandleCenter(angle, radius) {
-        const x = this.cx + Math.cos(angle) * radius;
-        const y = this.cy + Math.sin(angle) * radius;
-        return { x, y };
-    }
-
-    /**
-     * Get mouse/touch coordinates relative to the top and left of the container
-     *  
-     * @param {object} e
-     * 
-     * @returns {object} coords
-     */
-    getRelativeMouseOrTouchCoordinates(e) {
-        const containerRect = document.querySelector('.slider__data').getBoundingClientRect();
-        let x,
-            y,
-            clientPosX,
-            clientPosY;
-
-        // Touch Event triggered
-        if (e instanceof TouchEvent) {
-            clientPosX = e.touches[0].pageX;
-            clientPosY = e.touches[0].pageY;
-        }
-        // Mouse Event Triggered
-        else {
-            clientPosX = e.clientX;
-            clientPosY = e.clientY;
+        /**
+         * Mouse move / touch move event
+         * 
+         * @param {object} e 
+         */
+        mouseTouchMove(e) {
+            if (!this.mouseDown) return;
+            e.preventDefault();
+            const rmc = this.getRelativeMouseOrTouchCoordinates(e);
+            this.redrawActiveSlider(rmc);
         }
 
-        // Get Relative Position
-        x = clientPosX - containerRect.left;
-        y = clientPosY - containerRect.top;
-
-        return { x, y };
-    }
-
-    /**
-     * Calculate mouse angle in radians
-     * 
-     * @param {object} rmc 
-     * 
-     * @returns {number} angle
-     */
-    calculateMouseAngle(rmc) {
-        const angle = Math.atan2(rmc.y - this.cy, rmc.x - this.cx);
-
-        if (angle > - this.tau / 2 && angle < - this.tau / 4) {
-            return angle + this.tau * 1.25;
+        /**
+         * Mouse move / touch move event
+         * Deactivate slider
+         * 
+         */
+        mouseTouchEnd() {
+            if (!this.mouseDown) return;
+            this.mouseDown = false;
+            this.activeSlider = null;
         }
-        else {
-            return angle + this.tau * 0.25;
+
+        /**
+         * Calculate number of arc fractions and space between them
+         * 
+         * @param {number} circumference 
+         * @param {number} arcBgFractionLength 
+         * @param {number} arcBgFractionBetweenSpacing 
+         * 
+         * @returns {number} arcFractionSpacing
+         */
+        calculateSpacingBetweenArcFractions(circumference, arcBgFractionLength, arcBgFractionBetweenSpacing) {
+            const numFractions = Math.floor((circumference / arcBgFractionLength) * arcBgFractionBetweenSpacing);
+            const totalSpacing = circumference - numFractions * arcBgFractionLength;
+            return totalSpacing / numFractions;
+        }
+
+        /**
+         * Helper functiom - describe arc
+         * 
+         * @param {number} x 
+         * @param {number} y 
+         * @param {number} radius 
+         * @param {number} startAngle 
+         * @param {number} endAngle 
+         * 
+         * @returns {string} path
+         */
+        describeArc(x, y, radius, startAngle, endAngle) {
+            let path,
+                endAngleOriginal = endAngle,
+                start,
+                end,
+                arcSweep;
+
+            if (endAngleOriginal - startAngle === 360) {
+                endAngle = 359;
+            }
+
+            start = this.polarToCartesian(x, y, radius, endAngle);
+            end = this.polarToCartesian(x, y, radius, startAngle);
+            arcSweep = endAngle - startAngle <= 180 ? '0' : '1';
+
+            path = [
+                'M', start.x, start.y,
+                'A', radius, radius, 0, arcSweep, 0, end.x, end.y
+            ];
+
+            if (endAngleOriginal - startAngle === 360) {
+                path.push('z');
+            }
+
+            return path.join(' ');
+        }
+
+        /**
+         * Helper function - polar to cartesian transformation
+         * 
+         * @param {number} centerX 
+         * @param {number} centerY 
+         * @param {number} radius 
+         * @param {number} angleInDegrees 
+         * 
+         * @returns {object} coords
+         */
+        polarToCartesian(centerX, centerY, radius, angleInDegrees) {
+            const angleInRadians = angleInDegrees * Math.PI / 180;
+            const x = centerX + (radius * Math.cos(angleInRadians));
+            const y = centerY + (radius * Math.sin(angleInRadians));
+            return { x, y };
+        }
+
+        /**
+         * Helper function - calculate handle center
+         * 
+         * @param {number} angle 
+         * @param {number} radius
+         * 
+         * @returns {object} coords 
+         */
+        calculateHandleCenter(angle, radius) {
+            const x = this.cx + Math.cos(angle) * radius;
+            const y = this.cy + Math.sin(angle) * radius;
+            return { x, y };
+        }
+
+        /**
+         * Get mouse/touch coordinates relative to the top and left of the container
+         *  
+         * @param {object} e
+         * 
+         * @returns {object} coords
+         */
+        getRelativeMouseOrTouchCoordinates(e) {
+            const containerRect = document.querySelector('.slider__data').getBoundingClientRect();
+            let x,
+                y,
+                clientPosX,
+                clientPosY;
+
+            // Touch Event triggered
+            if (e instanceof TouchEvent) {
+                clientPosX = e.touches[0].pageX;
+                clientPosY = e.touches[0].pageY;
+            }
+            // Mouse Event Triggered
+            else {
+                clientPosX = e.clientX;
+                clientPosY = e.clientY;
+            }
+
+            // Get Relative Position
+            x = clientPosX - containerRect.left;
+            y = clientPosY - containerRect.top;
+
+            return { x, y };
+        }
+
+        /**
+         * Calculate mouse angle in radians
+         * 
+         * @param {object} rmc 
+         * 
+         * @returns {number} angle
+         */
+        calculateMouseAngle(rmc) {
+            const angle = Math.atan2(rmc.y - this.cy, rmc.x - this.cx);
+
+            if (angle > - this.tau / 2 && angle < - this.tau / 4) {
+                return angle + this.tau * 1.25;
+            }
+            else {
+                return angle + this.tau * 0.25;
+            }
+        }
+
+        /**
+         * Helper function - transform radians to degrees
+         * 
+         * @param {number} angle 
+         * 
+         * @returns {number} angle
+         */
+        radiansToDegrees(angle) {
+            return angle / (Math.PI / 180);
+        }
+
+        /**
+         * Find closest slider to mouse pointer
+         * Activate the slider
+         * 
+         * @param {object} rmc
+         */
+        findClosestSlider(rmc) {
+            const mouseDistanceFromCenter = Math.hypot(rmc.x - this.cx, rmc.y - this.cy);
+            const container = document.querySelector('.slider__data');
+            const sliderGroups = Array.from(container.querySelectorAll('g'));
+
+            // Get distances from client coordinates to each slider
+            const distances = sliderGroups.map(slider => {
+                const rad = parseInt(slider.getAttribute('rad'));
+                return Math.min(Math.abs(mouseDistanceFromCenter - rad));
+            });
+
+            // Find closest slider
+            const closestSliderIndex = distances.indexOf(Math.min(...distances));
+            this.activeSlider = sliderGroups[closestSliderIndex];
         }
     }
-
-    /**
-     * Helper function - transform radians to degrees
-     * 
-     * @param {number} angle 
-     * 
-     * @returns {number} angle
-     */
-    radiansToDegrees(angle) {
-        return angle / (Math.PI / 180);
-    }
-
-    /**
-     * Find closest slider to mouse pointer
-     * Activate the slider
-     * 
-     * @param {object} rmc
-     */
-    findClosestSlider(rmc) {
-        const mouseDistanceFromCenter = Math.hypot(rmc.x - this.cx, rmc.y - this.cy);
-        const container = document.querySelector('.slider__data');
-        const sliderGroups = Array.from(container.querySelectorAll('g'));
-
-        // Get distances from client coordinates to each slider
-        const distances = sliderGroups.map(slider => {
-            const rad = parseInt(slider.getAttribute('rad'));
-            return Math.min(Math.abs(mouseDistanceFromCenter - rad));
-        });
-
-        // Find closest slider
-        const closestSliderIndex = distances.indexOf(Math.min(...distances));
-        this.activeSlider = sliderGroups[closestSliderIndex];
-    }
-}
 
 
