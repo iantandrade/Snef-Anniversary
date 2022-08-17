@@ -865,7 +865,7 @@ class Slider {
             document.getElementById("24").style.opacity = 1;
             document.getElementById("25").style.opacity = 0;
         }
-        else if (currentValue >= 2022) {
+        else if (currentValue == 2022) {
             document.getElementById("1").style.opacity = 0;
             document.getElementById("2").style.opacity = 0;
             document.getElementById("3").style.opacity = 0;
@@ -897,7 +897,7 @@ class Slider {
 
                 document.getElementById("25").style.opacity = 1;
                 
-            }, 5000);
+            }, 2500);
 
             "use strict";
 
