@@ -1068,6 +1068,32 @@ class Slider {
             })();
 
         }
+            else if (currentValue >= 2023) {
+            document.getElementById("1").style.opacity = 0;
+            document.getElementById("2").style.opacity = 0;
+            document.getElementById("3").style.opacity = 0;
+            document.getElementById("4").style.opacity = 0;
+            document.getElementById("5").style.opacity = 0;
+            document.getElementById("6").style.opacity = 0;
+            document.getElementById("7").style.opacity = 0;
+            document.getElementById("8").style.opacity = 0;
+            document.getElementById("9").style.opacity = 0;
+            document.getElementById("10").style.opacity = 0;
+            document.getElementById("11").style.opacity = 0;
+            document.getElementById("12").style.opacity = 0;
+            document.getElementById("14").style.opacity = 0;
+            document.getElementById("15").style.opacity = 0;
+            document.getElementById("16").style.opacity = 0;
+            document.getElementById("17").style.opacity = 0;
+            document.getElementById("18").style.opacity = 0;
+            document.getElementById("19").style.opacity = 0;
+            document.getElementById("20").style.opacity = 0;
+            document.getElementById("21").style.opacity = 0;
+            document.getElementById("22").style.opacity = 0;
+            document.getElementById("23").style.opacity = 0;
+            document.getElementById("24").style.opacity = 0;
+            document.getElementById("25").style.opacity = 0;
+            document.getElementById("celeb").style.opacity = 0;
     }
 
     /**
